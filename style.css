@@ -1,0 +1,190 @@
+/* custom properties */
+
+:root {
+  --clr-primary-dark-green: hsl(158, 36%, 37%);
+  --clr-primary-cream: hsl(30, 38%, 92%);
+  --clr-primary-darker-green: hsl(158, 52%, 21%);
+
+  --clr-neutral-dark-blue: hsl(212, 21%, 14%);
+  --clr-neutral-grayish-blue: hsl(228, 12%, 48%);
+  --clr-neutral-white: hsl(0, 0%, 100%);
+
+  --ff-special: "Fraunces", serif;
+  --ff-basic: "Montserrat", sans-serif;
+
+  --fw-regular: 500;
+  --fw-bold: 700;
+}
+
+/* CSS reset */
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+/*
+    3. Allow percentage-based heights in the application
+  */
+html,
+body {
+  height: 100%;
+}
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* general CSS */
+
+body {
+  font-family: var(--ff-basic);
+  font-weight: var(--fw-regular);
+  font-size: 0.875rem;
+  color: var(--clr-neutral-grayish-blue);
+  background-color: var(--clr-primary-cream);
+  place-content: center;
+  margin: 10rem 1rem;
+}
+
+/* product CSS */
+
+.card {
+  background-color: var(--clr-neutral-white);
+  border-radius: 0.8rem;
+  overflow: hidden;
+  display: grid;
+  max-width: 800px;
+}
+
+.product-img-desktop {
+  display: none;
+}
+
+.product-img-mobile {
+  display: block;
+  width: 100%;
+}
+
+@media screen and (min-width: 670px) {
+  .card {
+    grid-template-columns: 1fr 1fr;
+
+    margin: 100px auto;
+  }
+
+  .product-img-mobile {
+    display: none;
+    width: 100%;
+  }
+
+  .product-img-desktop {
+    display: block;
+    width: 100%;
+  }
+}
+
+.product-content {
+  padding: 1.6rem;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.product-category {
+  letter-spacing: 0.2rem;
+}
+
+.product-title {
+  font-size: 2.4rem;
+  color: var(--clr-neutral-dark-blue);
+  font-family: var(--ff-special);
+  line-height: 2.4rem;
+}
+
+/* price CSS */
+
+.price-group {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.product-price {
+  color: var(--clr-primary-dark-green);
+  font-family: var(--ff-special);
+  font-size: 2.4rem;
+}
+
+.product-original-price {
+  text-decoration: line-through;
+}
+
+/* button */
+
+.button {
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0.8rem 1.6rem;
+  border: 0;
+  background-color: var(--clr-primary-dark-green);
+  color: var(--clr-neutral-white);
+  border-radius: 0.4rem;
+  font-weight: var(--fw-bold);
+  font-size: 1rem;
+  height: 4rem;
+}
+
+.button:hover {
+  background-color: var(--clr-primary-darker-green);
+}
+
+svg {
+  position: relative;
+  top: 2px;
+  right: 8px;
+}
